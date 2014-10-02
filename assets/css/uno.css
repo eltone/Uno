@@ -1,9 +1,9 @@
 @import 'http://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab:300,400)';
-@import url(../css/animate.css);
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(../css/animate.css);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -57,7 +57,6 @@ body {
   src: url("../fonts/foundation-icons/foundation-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/foundation-icons/foundation-icons.woff") format("woff"), url("../fonts/foundation-icons/foundation-icons.ttf") format("truetype"), url("../fonts/foundation-icons/foundation-icons.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 .icon:before {
   font-family: "foundation-icons";
   font-style: normal;
@@ -1047,6 +1046,16 @@ pre {
 .tags {
   font-size: .8em;
   color: #c7c7c7; }
+  .date a,
+  .time a,
+  .author a,
+  .tags a {
+    color: #666666; }
+    .date a:hover,
+    .time a:hover,
+    .author a:hover,
+    .tags a:hover {
+      color: #b9301c; }
 
 .excerpt {
   margin: 0;
@@ -1122,6 +1131,11 @@ pre {
 hr {
   border: none; }
 
+.section-title__divider {
+  width: 30%;
+  margin: 2.2em 0 2.1em 0;
+  border-top: 1px solid #dddddd; }
+
 .hidden {
   display: none !important; }
 
@@ -1162,6 +1176,9 @@ hr {
   width: 30%;
   margin: 2em 0;
   border-top: 1px solid #dddddd; }
+
+.error-code {
+  font-size: 6em; }
 
 .panel {
   display: table;
@@ -1209,7 +1226,6 @@ hr {
   bottom: 0;
   left: 0;
   background-color: rgba(68, 68, 68, 0.6);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(68, 68, 68, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.9)));
   background-image: -webkit-linear-gradient(-410deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));
   background-image: linear-gradient(140deg,rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9)); }
 
@@ -1269,25 +1285,21 @@ hr {
 
 .cover-green {
   background-color: rgba(21, 111, 120, 0.6);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(21, 111, 120, 0.6)), color-stop(100%, rgba(6, 31, 33, 0.8)));
   background-image: -webkit-linear-gradient(-410deg, rgba(21, 111, 120, 0.6) 20%, rgba(6, 31, 33, 0.8));
   background-image: linear-gradient(140deg,rgba(21, 111, 120, 0.6) 20%, rgba(6, 31, 33, 0.8)); }
 
 .cover-purple {
   background-color: rgba(73, 50, 82, 0.6);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(73, 50, 82, 0.6)), color-stop(100%, rgba(17, 11, 19, 0.8)));
   background-image: -webkit-linear-gradient(-410deg, rgba(73, 50, 82, 0.6) 20%, rgba(17, 11, 19, 0.8));
   background-image: linear-gradient(140deg,rgba(73, 50, 82, 0.6) 20%, rgba(17, 11, 19, 0.8)); }
 
 .cover-red {
   background-color: rgba(119, 31, 18, 0.6);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(119, 31, 18, 0.6)), color-stop(100%, rgba(30, 8, 5, 0.8)));
   background-image: -webkit-linear-gradient(-410deg, rgba(119, 31, 18, 0.6) 20%, rgba(30, 8, 5, 0.8));
   background-image: linear-gradient(140deg,rgba(119, 31, 18, 0.6) 20%, rgba(30, 8, 5, 0.8)); }
 
 .cover-slate {
   background-color: rgba(61, 66, 96, 0.6);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(61, 66, 96, 0.6)), color-stop(100%, rgba(21, 23, 34, 0.8)));
   background-image: -webkit-linear-gradient(-410deg, rgba(61, 66, 96, 0.6) 20%, rgba(21, 23, 34, 0.8));
   background-image: linear-gradient(140deg,rgba(61, 66, 96, 0.6) 20%, rgba(21, 23, 34, 0.8)); }
 
@@ -1502,20 +1514,6 @@ input[type="tel"] {
   input[type="search"]::-webkit-input-placeholder,
   input[type="tel"]::-webkit-input-placeholder {
     color: #cccccc; }
-  input[type="text"]:-moz-placeholder,
-  input[type="password"]:-moz-placeholder,
-  input[type="datetime"]:-moz-placeholder,
-  input[type="datetime-local"]:-moz-placeholder,
-  input[type="date"]:-moz-placeholder,
-  input[type="month"]:-moz-placeholder,
-  input[type="time"]:-moz-placeholder,
-  input[type="week"]:-moz-placeholder,
-  input[type="number"]:-moz-placeholder,
-  input[type="email"]:-moz-placeholder,
-  input[type="url"]:-moz-placeholder,
-  input[type="search"]:-moz-placeholder,
-  input[type="tel"]:-moz-placeholder {
-    color: #cccccc; }
   input[type="text"]::-moz-placeholder,
   input[type="password"]::-moz-placeholder,
   input[type="datetime"]::-moz-placeholder,
@@ -1529,6 +1527,20 @@ input[type="tel"] {
   input[type="url"]::-moz-placeholder,
   input[type="search"]::-moz-placeholder,
   input[type="tel"]::-moz-placeholder {
+    color: #cccccc; }
+  input[type="text"]:-moz-placeholder,
+  input[type="password"]:-moz-placeholder,
+  input[type="datetime"]:-moz-placeholder,
+  input[type="datetime-local"]:-moz-placeholder,
+  input[type="date"]:-moz-placeholder,
+  input[type="month"]:-moz-placeholder,
+  input[type="time"]:-moz-placeholder,
+  input[type="week"]:-moz-placeholder,
+  input[type="number"]:-moz-placeholder,
+  input[type="email"]:-moz-placeholder,
+  input[type="url"]:-moz-placeholder,
+  input[type="search"]:-moz-placeholder,
+  input[type="tel"]:-moz-placeholder {
     color: #cccccc; }
   input[type="text"]:-ms-input-placeholder,
   input[type="password"]:-ms-input-placeholder,

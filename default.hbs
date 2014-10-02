@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{! Meta }}
-    <title>{{meta_title}}</title>
+    <title>{{#unless post}}{{#if message}}{{message}} - {{@blog.title}}{{/if}}{{meta_title}}{{else}}{{meta_title}} - {{@blog.title}}{{/unless}}</title>
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -27,7 +27,7 @@
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
     {{! Styles and Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/uno.css"}}" />
 
     {{! Ghost Magic }}
     {{ghost_head}}
